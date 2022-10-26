@@ -11,23 +11,24 @@
 
     </head>
     <body class="antialiased">
-        <h1>Blog Name</h1>
-        <form action="/posts" method="POST">
+        <h1 class="title">編集画面</h1>
+        <form action="/posts/{{$post->id}}" method="POST">
             @csrf
-            <div class="title">
+            @method('PUT')
+            <div class='content_title'>
                 <h2>Title</h2>
-                <input type="text" name="post[title]" placeholder="タイトル" value="{{old('post.title')}}"/>
+                <input type='text' name="post[title]" value="{{$post->title}}"/>
                 <p class ="title_error" style="color:red">{{$errors->first('post.title')}}</p>
             </div>
-            <div class ="body">
+            <div class ='content_body'>
                 <h2>Body</h2>
-                <textarea name="post[body]" placeholder="今日もお疲れ様でした"value="{{old('post.body')}}"></textarea>
+                <input type='text' name='post[body]' value="{{$post->body}}"></textarea>
                 <p class ="body_error" style ="color:red">{{$errors->first('post.body')}}</p>
             </div>
-            <input type="submit" value="保存"/>
+            <input type="submit" value="update">
         </form>
-       <div class="back">
-           <a href ="/">戻る</a>
+       <div class="footer">
+           <a href ="/posts/{{$post->id}}">戻る</a>
        </div>
     </body>
 </html>

@@ -21,7 +21,7 @@
                         {{$post->title}}
                     </a>
                 </h2>
-                <p class = body>{{$post->body}}</p>
+                <p class = 'body'>{{$post->body}}</p>
             </div>
             @endforeach
         </div>
