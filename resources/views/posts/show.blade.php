@@ -11,6 +11,7 @@
 
     </head>
     <body class="antialiased">
+        <a href="">{{$post->category->name }}</a>
         <h1 class ="title">
             {{$post->title}}
         </h1>
